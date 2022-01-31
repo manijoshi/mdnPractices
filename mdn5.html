@@ -1,0 +1,64 @@
+<html class="output">
+    <head>
+        <style>
+            body{
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                margin: 0 auto;
+                width: 50%;
+            }
+            p{
+                font-weight: bold;
+                font-size: 50px;
+            }
+            label{
+                font-size: 34px;
+            }
+            select{
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <label for="">Select theme name:</label>
+        <select>
+            <option value="">--Select--</option>
+            <option value="white">White</option>
+            <option value="black">Black</option>
+            <option value="yellow">Yellow</option>
+            <option value="magenta">Magenta</option>
+            <option value="psychedelic">Psychedelic</option>
+        </select>
+        <p>Select BgColor from dropdown</p>
+        <script>
+            const select = document.querySelector('select');
+            const html = document.querySelector('.output');
+            select.addEventListener('change',()=>{
+            const option = select.value;
+            switch(option){
+                case 'white':
+                    update('white','black');
+                    break;
+                case 'black':
+                    update('black','white');
+                    break;
+                case 'yellow':
+                    update('yellow','grey');
+                    break;
+                case 'magenta':
+                    update('magenta','white');
+                    break;
+                case 'psychedelic':
+                    update('lime','white');
+                    break;
+                default:
+                    break;
+            }
+        });
+            function update(bgColor,textColor){
+                html.style.backgroundColor = bgColor;
+html.style.color = textColor;
+            }
+            
+        </script>
+    </body>
+</html>
